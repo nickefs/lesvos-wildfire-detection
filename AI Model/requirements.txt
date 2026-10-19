@@ -1,7 +1,0 @@
-# Detection scripts only; versions observed in the existing local environment.
-ultralytics==8.4.177
-cloudinary==1.46.3
-requests==2.34.2
-python-dotenv==1.2.4
-# Imported by detect.py, although automatic model download is not implemented.
-huggingface-hub==2.2.0

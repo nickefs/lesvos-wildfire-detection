@@ -1,0 +1,5 @@
+ultralytics==8.4.177
+cloudinary==1.46.3
+requests==2.34.2
+python-dotenv==1.2.4
+opencv-python>=4.6.0

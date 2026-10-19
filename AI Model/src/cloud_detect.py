@@ -150,21 +150,20 @@ while True:
 
             # Print detections
             print(f"\nProcessed: {asset['public_id']}")
-            print("Camera folder:", asset["asset_folder"])
+            print("Camera folder:", asset.get("asset_folder") or asset.get("folder") or "UNKNOWN")
 
             for box in result.boxes:
                 cls = int(box.cls[0])
                 confidence = float(box.conf[0])
                 print(model.names[cls], round(confidence, 3))
 
-            # Mark as processed only after successful inference
+            save_csv(asset, result)
+            # Mark as processed after successful logging
             processed.add(asset_id)
             STATE.write_text(
                 json.dumps(sorted(processed), indent=2),
                 encoding="utf-8"
             )
-            # Save YOLO results to monthly CSV
-            save_csv(asset, result)
             # Delete downloaded image after successful processing
             image_path.unlink(missing_ok=True)
 
