@@ -1,5 +1,4 @@
 # Detection scripts only; versions observed in the existing local environment.
-# QGIS/GDAL tools use a separate QGIS-managed environment.
 ultralytics==8.4.177
 cloudinary==1.46.3
 requests==2.34.2
